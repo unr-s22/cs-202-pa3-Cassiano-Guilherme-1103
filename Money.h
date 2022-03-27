@@ -24,8 +24,7 @@ $100.33
 ----*/
 class Money{
 private:
-    float balance, cents;
-    int dollars;
+    int dollars, cents;
 
 public:
     Money(){}
