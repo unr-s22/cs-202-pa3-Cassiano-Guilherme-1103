@@ -27,7 +27,78 @@ private:
     int dollars, cents;
 
 public:
-    Money(){}
+    Money();
     Money(int newDollars, int newCents);
+
+//overload of math operators
+int operator + (const Money&b);
+//overload of all relation operators
+
+   bool operator <(const Money& b);
+   bool operator >(const Money& b);
+   bool operator ==(const Money& b);
+   bool operator <=(const Money& b);
+   bool operator >=(const Money& b);
+   bool operator !=(const Money& b);
+
+   // bool operator <(const Money& b) {
+   //       if(dollars < b.dollars) {
+   //          return true;
+   //       }
+   //       if(dollars == b.dollars && cents < b.cents) {
+   //          return true;
+   //       }
+         
+   //       return false;
+   //    }
     
+   // bool operator >(const Money& b) {
+   //       if(dollars > b.dollars) {
+   //          return true;
+   //       }
+   //       if(dollars == b.dollars && cents > b.cents) {
+   //          return true;
+   //       }
+         
+   //       return false;
+   //    }
+
+   // bool operator ==(const Money& b) {
+   //       if((dollars == b.dollars) && (cents == b.cents)) {
+   //          return true;
+   //       }
+
+   //       return false;
+   //    }
+
+   // bool operator <=(const Money& b) {
+   //       if(dollars < b.dollars) {
+   //          return true;
+   //       }
+   //       if(dollars <= b.dollars && cents <= b.cents) {
+   //          return true;
+   //       }
+         
+   //       return false;
+   //    }
+
+   // bool operator >=(const Money& b) {
+   //       if(dollars > b.dollars) {
+   //          return true;
+   //       }
+   //       if(dollars >= b.dollars && cents >= b.cents) {
+   //          return true;
+   //       }
+         
+   //       return false;
+   //    }
+
+   // bool operator !=(const Money& b) {
+   //       if(dollars != b.dollars || cents != b.cents) {
+   //          return true;
+   //       }
+         
+   //       return false;
+   //    }
+
 };
