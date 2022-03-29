@@ -24,81 +24,27 @@ $100.33
 ----*/
 class Money{
 private:
-    int dollars, cents;
-
+   int dollars, cents;
 public:
-    Money();
-    Money(int newDollars, int newCents);
+   Money();
+   Money(int newDollars, int newCents);
+//overload of ostream operator
+   friend std::ostream& operator << (std::ostream& out, Money money);
+
 
 //overload of math operators
-int operator + (const Money&b);
+   float operator + (const Money&b);
 //overload of all relation operators
-
    bool operator <(const Money& b);
    bool operator >(const Money& b);
    bool operator ==(const Money& b);
    bool operator <=(const Money& b);
    bool operator >=(const Money& b);
    bool operator !=(const Money& b);
-
-   // bool operator <(const Money& b) {
-   //       if(dollars < b.dollars) {
-   //          return true;
-   //       }
-   //       if(dollars == b.dollars && cents < b.cents) {
-   //          return true;
-   //       }
-         
-   //       return false;
-   //    }
-    
-   // bool operator >(const Money& b) {
-   //       if(dollars > b.dollars) {
-   //          return true;
-   //       }
-   //       if(dollars == b.dollars && cents > b.cents) {
-   //          return true;
-   //       }
-         
-   //       return false;
-   //    }
-
-   // bool operator ==(const Money& b) {
-   //       if((dollars == b.dollars) && (cents == b.cents)) {
-   //          return true;
-   //       }
-
-   //       return false;
-   //    }
-
-   // bool operator <=(const Money& b) {
-   //       if(dollars < b.dollars) {
-   //          return true;
-   //       }
-   //       if(dollars <= b.dollars && cents <= b.cents) {
-   //          return true;
-   //       }
-         
-   //       return false;
-   //    }
-
-   // bool operator >=(const Money& b) {
-   //       if(dollars > b.dollars) {
-   //          return true;
-   //       }
-   //       if(dollars >= b.dollars && cents >= b.cents) {
-   //          return true;
-   //       }
-         
-   //       return false;
-   //    }
-
-   // bool operator !=(const Money& b) {
-   //       if(dollars != b.dollars || cents != b.cents) {
-   //          return true;
-   //       }
-         
-   //       return false;
-   //    }
+//
+   int getCents();
+   int getDollars();
+   void setCents(int newCents);
+   void setDollars(int newDollars);
 
 };
