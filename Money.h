@@ -25,6 +25,7 @@ $100.33
 class Money{
 private:
    int dollars, cents;
+
 public:
    Money();
    Money(int newDollars, int newCents);
@@ -33,7 +34,9 @@ public:
 
 
 //overload of math operators
-   float operator + (const Money&b);
+//   float operator + (const Money&b);
+   Money operator + (const Money& b);
+   Money operator - (const Money& b);
 //overload of all relation operators
    bool operator <(const Money& b);
    bool operator >(const Money& b);
