@@ -4,7 +4,6 @@
 Account::Account(Money money)
 {
 	mon = money;
-
 }
 
 void Account::makeDeposit(Money mon)
@@ -32,7 +31,7 @@ std::ostream& operator << (std::ostream& os, Account& account)
 {
 	os<<"Account Details"<<std::endl;
 	os<<"--------------------------"<<std::endl;
-	os<<"Current Balance:"<< account.mon <<std::endl;
+	os<<"Current Balance: "<< account.mon <<std::endl;
 	os<<"--------------------------"<<std::endl;
 	os<<"Number of Deposits: " << account.md.size() <<std::endl;
 	os<<"--------------------"<<std::endl;
@@ -49,6 +48,7 @@ std::ostream& operator << (std::ostream& os, Account& account)
         }
 	os<<"----"<<std::endl;
 
+	return os;
 } 
 
 
