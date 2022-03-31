@@ -2,21 +2,14 @@
 #include "Money.h"
 
 int main(){
-    Money a(300,23);
-    Money b(500,22);
-//for testing overloaded relational operators
-
-    std::cout <<"Overloaded stream operator ex: "<< a << std::endl;
-    std::cout << a << std::endl;
-
-    Money c = (a+b);
-
-    std::cout << c;
-    
-    Money m(100,10);
-    std::cout << m << std::endl;
-    Account acc(m);
-    std::cout << acc << std::endl;
-
+	Money m(300,23);
+	Account acc(m);
+	std::cout<<acc;
+	acc.makeDeposit(Money(200,00));
+	acc.makeDeposit(Money(300,24));
+	acc.makeDeposit(Money(501,22));
+	acc.makeWithdrawals(Money(300,10));
+	acc.makeWithdrawals(Money(201,34));
+	std::cout<<acc;
     return 0;
 }		

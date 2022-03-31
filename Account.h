@@ -1,16 +1,21 @@
 #pragma once
 #include "Money.h"
 #include <vector>
+#include <numeric>
 class Account
 {
 	private:
 	Money mon;
+	std::vector<Money> md;
+	std::vector<Money> mw;
+	bool balanceChange = false;
 
 	public:
-	Account(Money money): mon(money){}
-	void makeDeposit(Money mon);
-	void makeWithdrawals(Money mon);
-	friend std::ostream& operator << (std::ostream& os, const Account& a);
-	
+	Account(Money);
+	void makeDeposit(Money);
+	void makeWithdrawals(Money);
+	Money getDollars();
+	Money getCents();
+	friend std::ostream& operator << (std::ostream& os, Account& account);
 
 };
