@@ -14,8 +14,7 @@ class Account
 	Account(Money);
 	void makeDeposit(Money);
 	void makeWithdrawals(Money);
-	Money getDollars();
-	Money getCents();
+	Money getBalance();
 	friend std::ostream& operator << (std::ostream& os, Account& account);
 
 };

@@ -6,22 +6,21 @@ Account::Account(Money money)
 	mon = money;
 }
 
-void Account::makeDeposit(Money mon)
+void Account::makeDeposit(Money money)
 {
-	md.push_back(mon);
+	md.push_back(money);
 	balanceChange = true;
-	mon = md[0] + md[1] + md[2];
-	std::cout<<mon<<std::endl;
+
 }
 
 
 
 
 
-void Account::makeWithdrawals(Money mon)
+void Account::makeWithdrawals(Money money)
 {
-	mw.push_back(mon);
-	balanceChange = true;
+	mw.push_back(money);
+	balanceChange = true;		
 }
 
 
@@ -31,7 +30,7 @@ std::ostream& operator << (std::ostream& os, Account& account)
 {
 	os<<"Account Details"<<std::endl;
 	os<<"--------------------------"<<std::endl;
-	os<<"Current Balance: "<< account.mon <<std::endl;
+	os<<"Current Balance: "<< account.getBalance() <<std::endl;
 	os<<"--------------------------"<<std::endl;
 	os<<"Number of Deposits: " << account.md.size() <<std::endl;
 	os<<"--------------------"<<std::endl;
@@ -51,6 +50,28 @@ std::ostream& operator << (std::ostream& os, Account& account)
 	return os;
 } 
 
-
+Money Account::getBalance()
+{
+	Money monPlus;
+	Money monMinus;
+	Money monTotal;
+	if (balanceChange == false)
+	{
+		return mon;
+	}
+	if (balanceChange == true)
+	{
+		for(auto i :md)
+		{
+			monPlus = monPlus + i;
+		}
+		for(auto i :mw)
+		{
+			monMinus = monMinus - i;
+		}
+		monTotal = monPlus + monMinus;
+		return mon + monTotal;
+	}
+}
 
 
